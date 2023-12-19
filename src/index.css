@@ -2,16 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'FiraGO';
+    src: local('FiraGO'), url(./fonts/FiraGO/FiraGO-Regular.woff2) format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    font-family: 'FiraGO', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header, main {
+    @apply px-[76px]
+}
+
+main {
+    @apply bg-body;
+    min-height: calc(100vh - 80px);
+}
+
+.button-primary {
+    @apply px-[20px] py-[10px] box-border rounded-[8px] text-[14px] block font-medium leading-5 bg-button-active disabled:bg-button-inactive text-white;
 }

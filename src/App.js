@@ -1,10 +1,14 @@
+import Header from "./components/global/Header";
+import Main from "./components/global/Main";
+
 function App() {
 
-  return (
-    <div>
-      <h1>Base</h1>      
-    </div>
-  );
+    return (
+        <>
+            <Header />
+            <Main />
+        </>
+    );
 }
 
 export default App;
