@@ -1,5 +1,5 @@
-import Logo from "../common/Logo";
-import Button from "../common/Button";
+import Logo from "../../common/Logo";
+import Button from "../../common/Button";
 import {Link} from "react-router-dom";
 
 const HeaderComponent = (props) => {
