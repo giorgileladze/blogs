@@ -25,7 +25,7 @@ const BlogsList = () => {
     if(!blogs.length) return null;
 
     return (
-        <BlogsListComponent blogs={blogs} />
+        <BlogsListComponent blogs={blogsFilter(blogs)} />
     );
 }
 
