@@ -1,6 +1,6 @@
 import Logo from "../../common/Logo";
 import Button from "../../common/Button";
-// import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const HeaderComponent = (props) => {
     const {
@@ -16,7 +16,7 @@ const HeaderComponent = (props) => {
             <div className={"h-fit my-auto"}>
                 {!isAuthorized ?
                     <Button>შესვლა</Button> :
-                    <a href={"/create-blog"} className={"button-primary"}>დაამატე ბლოგი</a>
+                    <Link href={"/createblog"} className={"button-primary"}>დაამატე ბლოგი</Link>
                 }
             </div>
         </header>);
