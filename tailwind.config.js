@@ -17,6 +17,11 @@ module.exports = {
       },
       "body" : {
         DEFAULT: "#F3F2FA",
+      },
+      "text": {
+        "primary": "#1A1A1F",
+        "secondary": "#85858D",
+        "content": "#404049",
       }
     }
   },
