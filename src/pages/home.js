@@ -18,7 +18,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <BlogsList />
+            <BlogsList categorieIds={[]}/>
         </div>
     );
 }

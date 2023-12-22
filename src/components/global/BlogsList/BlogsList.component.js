@@ -42,17 +42,29 @@ const BlogCard = ({blog}) => {
     );
 }
 
-const BlogsListComponent = ({blogs}) => {
-    const testBlogs = new Array(7).fill(blogs[0]);
-    return (
-        <div className="grid grid-cols-3 gap-x-8 gap-y-14">
-            {testBlogs.map(blog => {
-                return (
-                    <BlogCard blog={blog}/>
-                );
-            })}
-        </div>
-    );
+const BlogsListComponent = ({blogs, type}) => {
+
+    const slider = () => {
+        return <h1>slider to implement</h1>
+    } 
+
+    const grid = () => {
+        return (
+            <div className="grid grid-cols-3 gap-x-8 gap-y-14">
+                {blogs.map(blog => {
+                    return (
+                        <BlogCard blog={blog}/>
+                    );
+                })}
+            </div>
+        );
+    }
+
+    if(type === "slider") {
+        return slider();
+    }
+
+    return grid();
 }
 
 export default BlogsListComponent;

@@ -9,7 +9,7 @@ const MainComponent = () => {
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
                 <Route path="/createblog" element={<CreateBlogPage />}></Route>
-                <Route path="/blog/:id" element={<BlogPage />}></Route>
+                <Route path="/blogs/:blogId" element={<BlogPage />}></Route>
             </Routes>
         </main>
     );

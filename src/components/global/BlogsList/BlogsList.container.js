@@ -2,12 +2,23 @@ import { useEffect, useState } from "react";
 import BlogsListComponent from "./BlogsList.component";
 import api from "../../../axios";
 
-const BlogsList = () => {
+const BlogsList = ({categorieIds, type = "grid"}) => {
     const [blogs, setBlogs] = useState([]);
 
-    const blogsFilter = () => {
-        // TODO: implement actual filter for blogs using categories
-        return blogs;
+    const blogsFilter = (blogsToFilter) => {
+        if(!categorieIds.length) return blogsToFilter;
+
+        return blogsToFilter.filter(elem => {
+            let include = false;
+            categorieIds.forEach(id => {
+                elem.categories.forEach(cat => {
+                    // eslint-disable-next-line eqeqeq
+                    if(cat.id == id) include = true;
+                })
+            });
+
+            return include;
+        });
     }
 
     useEffect(() => {
@@ -25,7 +36,7 @@ const BlogsList = () => {
     if(!blogs.length) return null;
 
     return (
-        <BlogsListComponent blogs={blogsFilter(blogs)} />
+        <BlogsListComponent type={type} blogs={blogsFilter(blogs)} />
     );
 }
 
