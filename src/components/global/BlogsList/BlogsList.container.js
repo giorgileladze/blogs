@@ -6,7 +6,7 @@ const BlogsList = ({categorieIds, type = "grid"}) => {
     const [blogs, setBlogs] = useState([]);
 
     const blogsFilter = (blogsToFilter) => {
-        if(!categorieIds.length) return blogsToFilter;
+        if(!categorieIds || !categorieIds.length) return blogsToFilter;
 
         return blogsToFilter.filter(elem => {
             let include = false;
@@ -33,7 +33,7 @@ const BlogsList = ({categorieIds, type = "grid"}) => {
         fetchBlogs();
     }, [])
 
-    if(!blogs.length) return null;
+    if(!blogs || !blogs.length) return null;
 
     return (
         <BlogsListComponent type={type} blogs={blogsFilter(blogs)} />

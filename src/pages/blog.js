@@ -37,7 +37,7 @@ const BlogPage = () => {
             <div>
                 <Blog blog={blog} />
                 <div className="mt-[98px]">
-                    <BlogsList categorieIds={[]} type="slider"/>
+                    <BlogsList categorieIds={[blog.categories.map(categori => categori.id)]} type="slider"/>
                 </div>
             </div>
         </>

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import linkArrow from "../../../assets/icons/link_arrow.png"
 
 const BlogCard = ({blog}) => {
-    console.log(blog)
     const {
         title,
         image,
