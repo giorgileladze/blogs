@@ -3,7 +3,7 @@ import api from "../axios";
 import BlogsList from "../components/global/BlogsList";
 const HomePage = () => {
     const [categories, setCategories] = useState([]);
-    console.log(categories);
+
     useEffect(() => {
         const fetchCategories = async () => {
             try {

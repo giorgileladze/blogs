@@ -1,7 +1,7 @@
 import HeaderComponent from "./Header.component";
 
 const Header = () => {
-    const isAuthorized = false;
+    const isAuthorized = localStorage.getItem("isAuth") === "true";
 
     return (
         <HeaderComponent
