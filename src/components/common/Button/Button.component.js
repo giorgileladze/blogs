@@ -1,12 +1,18 @@
+import { twMerge } from "tailwind-merge";
+
 const Button = (props) => {
     const {
         children,
+        className,
         ...rest
     } = props;
 
     return (
         <button
-            className={"button-primary"}
+            className={twMerge(
+                "button-primary",
+                className
+            )}
             {...rest}
         >
             {children}
