@@ -31,6 +31,7 @@ const BlogPage = () => {
             setIds(arr);
             fetchBlogData();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [blogId]);
 
     if(!blog) return null;
