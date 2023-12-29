@@ -1,3 +1,5 @@
+import Categories from "../../common/Categories";
+
 const Blog = ({blog}) => {
     if(!blog) return null;
 
@@ -8,6 +10,7 @@ const Blog = ({blog}) => {
         publish_date,
         description,
         email,
+        categories,
     } = blog;
 
     return (
@@ -23,9 +26,11 @@ const Blog = ({blog}) => {
                 <div className="text-[32px] leading-10 text-text-primary font-bold">
                     <p>{title}</p>
                 </div>
-                {/* <div> */}
-                    {/* TODO: list categories there */}
-                {/* </div> */}
+                <div className="flex gap-4 flex-wrap">
+                    {categories.map((category, i) => {
+                        return <Categories category={category} key={i} />
+                    })}
+                </div>
             </div>
             <div className="text-[16px] leading-7 text-text-content">
                 <p>{description}</p>
