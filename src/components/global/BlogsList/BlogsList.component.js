@@ -13,9 +13,9 @@ const BlogCard = ({blog}) => {
         categories,
     } = blog;
     return (
-        <div className="">
-            <div >
-                <img className="rounded-[12px]" src={image} alt="Blog"/>
+        <div className="w-[408px]">
+            <div>
+                <img className="rounded-[12px] w-full h-[328px]" src={image} alt="Blog"/>
             </div>
             <div className="mt-5 grid gap-3">
                 <div className="grid gap-1">
@@ -45,14 +45,31 @@ const BlogCard = ({blog}) => {
 }
 
 const BlogsListComponent = ({blogs, type}) => {
-
+    console.log(blogs)
     const slider = () => {
-        return <h1>slider to implement</h1>
+        return (
+                <div>
+                    <div className="flex justify-between">
+                        <div>
+                            <h1 className="mb-10 font-bold text-[32px] leading-10 text-text-primary">მსგავსი სტატიები</h1>
+                        </div>
+                        <div>
+                        </div>                        
+                    </div>
+                    <div className="flex gap-x-8">
+                        {blogs.map((blog, i) => {
+                            return (
+                                <BlogCard key={i} blog={blog}/>
+                            );
+                        })}
+                    </div>
+                </div>
+        )
     } 
 
     const grid = () => {
         return (
-            <div className="grid grid-cols-3 gap-x-8 gap-y-14">
+            <div className="grid grid-cols-3 gap-x-8 gap-y-14 mx-auto w-[80%]">
                 {blogs.map((blog, i) => {
                     return (
                         <BlogCard key={i} blog={blog}/>

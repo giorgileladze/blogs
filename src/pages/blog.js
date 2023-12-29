@@ -7,6 +7,7 @@ import BlogsList from "../components/global/BlogsList";
 
 const BlogPage = () => {
     const [blog, setBlog] = useState(null);
+    const [ids, setIds] = useState([])
     const { blogId } = useParams();
     const navigate = useNavigate();
 
@@ -23,8 +24,11 @@ const BlogPage = () => {
                 console.log(e);
             }
         }
-
+        
         if (blogId) {
+            const arr = [];
+            blog?.categories?.foreach(categori => arr.push(categori.id))
+            setIds(arr);
             fetchBlogData();
         }
     }, [blogId]);
@@ -33,13 +37,13 @@ const BlogPage = () => {
 
     return (
         <>
-            <div className="pt-[40px]">
+            <div className="pt-[40px] absolute">
                 <img onClick={redirectToHome} src={goBackArrow} alt="goBackArrow" className="cursor-pointer"/>
             </div>
             <div>
                 <Blog blog={blog} />
                 <div className="mt-[98px]">
-                    <BlogsList categorieIds={[blog.categories.map(categori => categori.id)]} type="slider"/>
+                    <BlogsList categorieIds={[...ids]} type="slider"/>
                 </div>
             </div>
         </>

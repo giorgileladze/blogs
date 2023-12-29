@@ -2,13 +2,13 @@ import Logo from "../../common/Logo";
 import Button from "../../common/Button";
 import {Link} from "react-router-dom";
 import LoginModal from "../LoginModal/LoginModal.container";
-import { useState } from "react";
 
 const HeaderComponent = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
 
     const {
         isAuthorized,
+        isOpen,
+        setIsOpen,
     } = props;
 
     const closeModal = () => setIsOpen(false);
@@ -22,7 +22,7 @@ const HeaderComponent = (props) => {
                 <div className={"h-fit my-auto"}>
                     {!isAuthorized ?
                         <Button onClick={() => setIsOpen(true)}>შესვლა</Button> :
-                        <Link href={"/createblog"} className={"button-primary"}>დაამატე ბლოგი</Link>
+                        <Link to={"/createblog"} className={"button-primary"}>დაამატე ბლოგი</Link>
                     }
                 </div>
             </header>

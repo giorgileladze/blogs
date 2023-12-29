@@ -25,6 +25,14 @@ main {
     min-height: calc(100vh - 80px);
 }
 
+main:has( > * form) {
+    background-color: #FBFAFF !important;
+}
+
+form > * label {
+    @apply text-sm font-medium
+}
+
 .button-primary {
     @apply px-[20px] py-[10px] box-border rounded-[8px] text-[14px] block font-medium leading-5 bg-button-active disabled:bg-button-inactive text-white;
 }
@@ -45,4 +53,14 @@ main {
  
 .categories-scrollbar::-webkit-scrollbar-thumb:hover {
     background: #7a7a7a;
+}
+
+input[type="date"] {
+    @apply pl-10
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    background: url("assets/icons/calendar.png");
+    transform: translateX(-30px);
 }
