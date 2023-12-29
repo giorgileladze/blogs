@@ -29,6 +29,8 @@ const BlogPage = () => {
         }
     }, [blogId]);
 
+    if(!blog) return null;
+
     return (
         <>
             <div className="pt-[40px]">
