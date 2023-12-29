@@ -28,3 +28,21 @@ main {
 .button-primary {
     @apply px-[20px] py-[10px] box-border rounded-[8px] text-[14px] block font-medium leading-5 bg-button-active disabled:bg-button-inactive text-white;
 }
+
+.categories-scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+ 
+.categories-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+ 
+.categories-scrollbar::-webkit-scrollbar-thumb {
+    background: #acabab;
+    border-radius: 5px;
+}
+ 
+.categories-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #7a7a7a;
+}
